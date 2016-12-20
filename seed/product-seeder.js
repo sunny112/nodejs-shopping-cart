@@ -1,7 +1,13 @@
 //intiallize data
 var Product = require('../models/product');
 var mongoose = require('mongoose');
-mongoose.connect('localhost:27017/shopping');
+var mongodbUri = 'mongodb://root:1234@ds141118.mlab.com:41118/shopping';
+mongoose.connect(mongodbUri);
+var db = mongoose.connection;
+
+db.on('error', console.error.bind(console, 'connection error:'));
+
+db.once('open', function callback () {
 
 var products = [
 new Product({
@@ -40,6 +46,7 @@ for(var i = 0; i < products.length; i++){
 		}
 	});
 }
+});
 
 function exit(){
 	mongoose.disconnect();

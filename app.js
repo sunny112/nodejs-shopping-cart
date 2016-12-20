@@ -12,7 +12,9 @@ var flash = require('connect-flash');
 var validator = require('express-validator');
 var MongoStore = require('connect-mongo')(session);
 
-mongoose.connect('mongodb://localhost:27017/shopping');
+// mongoose.connect('mongodb://localhost:27017/shopping');
+mongoose.connect('mongodb://root:1234@ds141118.mlab.com:41118/shopping');
+
 
 require('./config/passport');
 var routes = require('./routes/index');
