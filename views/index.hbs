@@ -1,0 +1,32 @@
+
+<div class="row">
+  <div class="col-sm-6 col-md-6 col-md-offset-3 col-md-offset-3">
+    <div id="success" class="alert alert-success" {{#if noMessages}}hidden{{/if}}>
+      {{successMsg}}
+    </div>
+  </div>
+</div>
+{{#each products}}
+   <div class="row">
+      {{#each this}}
+          <div class = "col-sm-4 col-md-3">
+            <div class = "thumbnail">
+            <img src = "/images/{{this.imagePath}}" class="img-responsive"
+            alt="imagename">
+            <div class="caption">
+              <h3>{{this.title}}</h3>
+              <p class="description">{{this.description}}</p>
+
+              <div class = "clearfix">
+                <div class = "price pull-left">{{this.price}}</div>
+                <a href="/add-to-cart/{{this._id}}" class="btn btn-xs btn-info pull-right" role="button">
+                 <!--  <i class="glyphicon glyphicon-shopping-cart"></i> -->
+                  add
+                  </a>
+                </div>
+              </div>
+              </div>
+            </div>
+          {{/each}}
+        </div>
+      {{/each}}

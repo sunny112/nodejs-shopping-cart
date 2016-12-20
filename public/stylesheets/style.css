@@ -1,0 +1,19 @@
+body {
+ margin: 0;
+ padding: 0;
+ font-family: "Times New Roman";
+
+}
+
+.thumbnail img{
+	max-height: 150px;
+}
+
+.thumbnail .description{
+	color:#000000;
+}
+
+.price {
+	font-weight: bold;
+	font-size: 1.15em;
+}

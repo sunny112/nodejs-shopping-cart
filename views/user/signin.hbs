@@ -1,0 +1,61 @@
+<div class="row">
+	<div class="col-md-4 col-md-offset-4">
+	<form action="/user/signin" method="POST" role="form">
+		<legend>signin</legend>
+		{{#if hasErrors}}
+			<div class="alert alert-danger">
+				{{#each messages}}
+						<p>{{this}}</p>
+				{{/each}}
+			</div>
+		{{/if}}
+
+
+		<div class="form-group">
+			<label for="email">email</label>
+			<input type="text" class="form-control" id="email" name="email" placeholder="Please input your email" >
+		</div>
+		<div class="form-group">
+			<label for="password">password</label>
+			<input type="password" class="form-control" id="password" name="password" placeholder="Please input your password" >
+		</div>
+		 <input type = "hidden" class="form-control" name="_csrf" value="{{csrfToken}}"> 
+		<div class="form-group">
+
+		<button type="submit" class="btn btn-primary">Submit</button>
+		
+		</form>
+		<p>Don't have an account? <a href="/user/signup"> Sign up!</a></p>
+	</div>
+
+</div>
+
+
+
+<!-- <div class="login">
+  <div class="heading">
+    <h2>Sign in</h2>
+    {{#if hasErrors}}
+			<div class="alert alert-danger">
+				{{#each messages}}
+						<p>{{this}}</p>
+				{{/each}}
+			</div>
+		{{/if}}
+    <form action="/user/signin" method="POST" role="form">
+
+      <div class="input-group input-group-lg">
+        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+        <input type="text" class="form-control" placeholder="Email">
+          </div>
+
+        <div class="input-group input-group-lg">
+          <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+          <input type="password" class="form-control" placeholder="Password">
+        </div>
+
+        <button type="submit" class="float">Login</button>
+       </form>
+       <p>Don't have an account? <a href="/user/signup"> Sign up!</a></p>
+ 		</div>
+ </div> -->
